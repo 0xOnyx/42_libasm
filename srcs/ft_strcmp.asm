@@ -18,8 +18,10 @@ ft_strcmp_loop:
 	jne		return
 	inc		rdi
 	inc		rsi
+	jmp		ft_strcmp_loop
 return:
 	movzx	rax, bl
+	movzx	rcx, cl
 	sub		rax, rcx
 	pop		rcx
 	pop		rbx

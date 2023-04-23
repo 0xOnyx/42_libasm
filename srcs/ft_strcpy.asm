@@ -10,14 +10,14 @@ ft_strcpy:
 	xor		rdx, rdx
 	cmp		rsi, 0
 	jz		return
-	jmp		ft_strcpy_nest
-add:
+	jmp		next
+add_value:
 	inc		rcx;
-ft_strcpy_nest:
+next:
 	mov		dl, BYTE [rsi + rcx]
 	mov		BYTE [rdi + rcx], dl
 	cmp		dl, 0
-	jnz		add
+	jnz		add_value
 return:
 	mov		rax, rdi
 	pop		rdx
